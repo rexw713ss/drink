@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taiwan Beverage Store Integration Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>🍹Taiwan Beverage Store Integration Platform</h1>
+        <nav>
+            <a href="index_en.html">Home</a>
+            <a href="search_en.html">Menu Search</a>
+            <a href="price_compare_en.html">Price Comparison</a>
+            <a href="ranking_en.html">Top Rankings</a>
+            <a href="map_en.html">Map Navigation</a>
+            <button onclick="switchLanguage()">🌐 中文</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="banner" class="fade-section">
+            <div class="banner-container">
+                <h1 class="banner-text">Taiwan's Only Unified Beverage Platform</h1>
+            </div> 
+        </section>
+
+        <section id="slogan" class="fade-section">
+            <div class="header">
+                <h1 class="title">Ultimate Drink Map — Discover the Best Drinks Across Taiwan!</h1>
+                <img src="assets/images/ChatGPT Image 2025年4月25日 下午10_36_18.png" alt="DrinkNest Logo" class="logo">
+            </div>
+        </section>
+
+        <section id="features" class="fade-section">
+            <h2>Platform Features</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <span clas🌐="icon">🗺️</span>
+                    <h3>Beverage Map Navigation</h3>
+                    <p>One-click to explore all nearby drink shops and quickly find the best drinks!</p>
+                </div>
+                <div class="feature">
+                    <span class="icon">🏆</span>
+                    <h3>Top Rankings</h3>
+                    <p>Stay updated with the hottest drink rankings based on me!</p>
+                </div>
+                <div class="feature">
+                    <span class="icon">📋</span>
+                    <h3>Menu Searching</h3>
+                    <p>Find the most suitable drink in the simplest way!!</p>
+                </div>
+                <div class="feature">
+                    <span class="icon">💸</span>
+                    <h3>Price Comparison Tool</h3>
+                    <p>Compare prices of the same drinks across different brands — save money and drink better!</p>
+                </div>
+                <div class="feature">
+                    <span class="icon">🌐</span>
+                    <h3>Chinese/English Support</h3>
+                    <p>Fully bilingual interface — making it easy for international users to browse!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="latest-upgrade" class="fade-section">
+            <h2>Latest Upgrade</h2>
+            <p>●Add Milkshop and OOLONG TEA PROJECT menu-2025/05/23</p>
+            <p>●Chatbot is now online to solve your trouble of not knowing what to drink-2025/05/09</p>
+            <p>●Drink Map is now online to find drink shops suraround you-2025/05/02</p>
+            <p>●Menu is online, find out what items the store offers-2025/04/25</p>
+            <p>●Rankings are online, recommending you the drinks that developers think are the best-2025/04/18</p>
+            <p>●Price comparison system is online, helping you who love to drink but want to save money-2025/04/11</p>
+        </section>
+    </main>
+
+    <div id="chatbot-toggle">🤖</div>
+
+    <!-- 右側聊天機器人面板 -->
+    <aside class="chatbot-container">
+        <div id="chatbot-popup" class="chatbot">
+          <div class="chatbot-header">
+            <h4 class="chatbot-title">DrinkBot</h4>
+            <span class="chatbot-close">✕</span>
+          </div>
+      <div class="chatbot-body" id="chat-container">
+        <!-- resetBot() 會自動插入歡迎語＆選項 -->
+      </div>
+      <div class="chatbot-input-area">
+        <input id="user-input" type="text" placeholder="Send a message." />
+        <button id="send-btn" class="send-btn">&gt;</button>
+      </div>
+    </div>
+    </aside>
+  </div>
+
+
+    <footer>
+        <p>&copy; 2025 DrinkNest. All rights reserved. 11890054最後の優しさ</p>
+    </footer>
+
+    <div id="voice-helper" title="Click to use voice search 🔊">🎙️</div>
+
+    <script type="module" src="js/scripts.js"></script>
+</body>
+</html>

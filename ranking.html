@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>熱門排行榜 | 台灣飲料店整合平台</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/ranking.js" defer></script>
+  <script src="js/lang-switch.js" defer></script>  <!-- 假設你把那段 map 邏輯放在這支 -->
+</head>
+<body>
+  <header>
+    <h1 id="site-title">🍹 台灣飲料店整合平台</h1>
+    <nav>
+      <a href="index.html">首頁</a>
+      <a href="search.html">菜單搜尋</a>
+      <a href="price_compare.html">比價</a>
+      <a href="ranking.html">熱門排行榜</a>
+      <a href="map.html">地圖導覽</a>
+      <!-- 加上 id，JS 才能綁到按鈕 -->
+      <button id="lang-btn" onclick="switchLanguage()">🌐 English</button>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="ranking-title">熱門排行榜</h2>
+    <div id="ranking-list"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DrinkNest. All rights reserved. 11890054最後の優しさ</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>台灣飲料店整合平台</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header 保持不變 -->
+  <header>
+    <h1>🍹台灣飲料店整合平台</h1>
+    <nav>
+      <a href="index.html">首頁</a>
+      <a href="search.html">菜單搜尋</a>
+      <a href="price_compare.html">比價</a>
+      <a href="ranking.html">熱門排行榜</a>
+      <a href="map.html">地圖導覽</a>
+      <button id="lang-toggle">🌐 English</button>
+    </nav>
+  </header>
+
+  <!-- 兩欄佈局：左主內容、右聊天機器人 -->
+  <div class="page-container">
+    <!-- 左側主內容區 -->
+    <main class="main-content">
+      <!-- 橫幅區塊 -->
+      <section id="banner" class="fade-section">
+        <div class="banner-container">
+          <h1 class="banner-text">全台唯一飲料整合平台</h1>
+        </div>
+      </section>
+
+      <!-- 口號區塊 -->
+      <section id="slogan" class="fade-section">
+        <div class="header">
+          <h1 class="title">最強飲料地圖 探索台灣各地最好喝的飲料店！</h1>
+          <img src="assets/images/ChatGPT Image 2025年4月25日 下午10_36_12.png" alt="DrinkNest Logo" class="logo" />
+        </div>
+      </section>
+
+      
+<!-- 平台功能介紹 -->
+    <section id="features" class="fade-section">
+      <h2>平台特色功能</h2>
+      <div class="features-container">
+        <div class="feature">
+          <span class="icon">🗺️</span>
+          <h3>飲料地圖導航</h3>
+          <p>一鍵探索附近所有飲料店，快速找到最近的好喝飲料！</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🏆</span>
+          <h3>排行榜推薦</h3>
+          <p>根據評價與搜尋熱度，隨時更新的熱門飲料排行榜！</p>
+        </div>
+        <div class="feature">
+          <span class="icon">📋</span>
+          <h3>菜單查詢</h3>
+          <p>用最簡單的方式，找到最對味的飲料！</p>
+        </div>
+        <div class="feature">
+          <span class="icon">💸</span>
+          <h3>價格比較神器</h3>
+          <p>不同品牌同款飲料價格透明比較，幫你省錢又喝好！</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🌐</span>
+          <h3>中英切換支援</h3>
+          <p>全站支援中文 / 英文切換，外國朋友也能輕鬆使用！</p>
+        </div>
+      </div>
+    </section>
+      </section>
+
+      <!-- 最新評論 -->
+      <section id="latest-upgrade" class="fade-section">
+        <h2>最新更新</h2>
+        <p>●新增迷客夏與得正菜單-2025/05/23</p>
+        <p>●聊天機器人上線，解決妳不知道要喝什麼的煩惱-2025/05/09</p>
+        <p>●飲料地圖上線，找尋身在你附近的飲料店-2025/05/02</p>
+        <p>●菜單上線，找到店家提供什麼品項-2025/04/25</p>
+        <p>●排行榜上線，推薦給你開發者認為最好喝的飲料-2025/04/18</p>
+        <p>●比價系統上線，協助愛喝又想省荷包的妳-2025/04/11</p>
+      </section>
+    </main>
+
+    <div id="chatbot-toggle">🤖</div>
+
+    <!-- 右側聊天機器人面板 -->
+    <aside class="chatbot-container">
+        <div id="chatbot-popup" class="chatbot">
+          <div class="chatbot-header">
+            <h4 class="chatbot-title">DrinkBot 小幫手</h4>
+            <span class="chatbot-close">✕</span>
+          </div>
+      <div class="chatbot-body" id="chat-container">
+        <!-- resetBot() 會自動插入歡迎語＆選項 -->
+      </div>
+      <div class="chatbot-input-area">
+        <input id="user-input" type="text" placeholder="Send a message." />
+        <button id="send-btn" class="send-btn">&gt;</button>
+      </div>
+    </div>
+    </aside>
+  </div>
+
+  <!-- Footer 不變 -->
+  <footer>
+    <p>&copy; 2025 DrinkNest. All rights reserved. 11890054最後の優しさ</p>
+  </footer>
+
+  <!-- 載入腳本 -->
+  <script type="module" src="js/scripts.js"></script>
+</body>
+</html>
+

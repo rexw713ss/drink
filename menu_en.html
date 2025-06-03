@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drink Menu</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🍹Taiwan Beverage Store Integration Platform</h1>
+    <nav>
+      <a href="index_en.html">Home</a>
+      <a href="search_en.html">Menu Search</a>
+      <a href="price_compare_en.html">Price Comparison</a>
+      <a href="ranking_en.html">Top Rankings</a>
+      <a href="map_en.html">Map Navigation</a>
+      <button onclick="switchLanguage()">🌐 中文</button>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="brand-title" style="text-align: center;">Menu</h2>
+    <div id="menu-container" style="text-align: center;"></div>
+  </main>
+
+  <div id="menu-actions" style="text-align: center; margin-bottom: 20px;">
+    <button id="back-btn">⬅️ Back to brand list</button>
+    <button id="share-btn">🔗 Share this menu</button>
+    <button id="download"> ⬇️ Download Menu</button>
+    <p id="share-status" style="color: green;"></p>
+  </div>
+
+  <div id="social-share" style="text-align: center; margin-bottom: 30px;">
+      <span style="margin-right: 10px;">Share to: </span>
+      <a id="facebook-share" class="social-btn" target="_blank">
+        <i class="fab fa-facebook-square"></i> Facebook
+      </a>
+      <a id="line-share" class="social-btn" target="_blank">
+        <i class="fab fa-line"></i> LINE
+      </a>
+      <a id="instagram-tip" class="social-btn">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
+
+  <footer>
+    <p>&copy; 2025 DrinkNest. All rights reserved. 11890054最後の優しさ</p>
+  </footer>
+
+  <!-- JS 資料與邏輯 -->
+  <script src="js/menu_data.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

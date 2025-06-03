@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>菜單明細</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+
+  <!-- Font Awesome 社群圖示 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <header>
+    <h1>🍹台灣飲料店整合平台</h1>
+    <nav>
+      <a href="index.html">首頁</a>
+      <a href="search.html">菜單搜尋</a>
+      <a href="price_compare.html">比價</a>
+      <a href="ranking.html">熱門排行榜</a>
+      <a href="map.html">地圖導覽</a>
+      <button onclick="switchLanguage()">🌐 English</button>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="brand-title">菜單</h2>
+    <div id="menu-container" style="text-align: center;"></div>
+
+    <!-- 操作按鈕區 -->
+    <div id="menu-actions" style="text-align: center; margin: 20px 0;">
+      <button id="back-btn">⬅️ 回到品牌列表</button>
+      <button id="share-btn">🔗 分享這個菜單</button>
+      <button id="download"> ⬇️ 下載菜單</button>
+      <p id="share-status" style="color: green;"></p>
+    </div>
+
+    <!-- 社群分享區 -->
+    <div id="social-share" style="text-align: center; margin-bottom: 30px;">
+      <span style="margin-right: 10px;">分享到：</span>
+      <a id="facebook-share" class="social-btn" target="_blank">
+        <i class="fab fa-facebook-square"></i> Facebook
+      </a>
+      <a id="line-share" class="social-btn" target="_blank">
+        <i class="fab fa-line"></i> LINE
+      </a>
+      <a id="instagram-tip" class="social-btn">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DrinkNest. All rights reserved. 11890054最後の優しさ</p>
+  </footer>
+
+  <!-- JS 檔案 -->
+  <script src="js/menu_data.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>
