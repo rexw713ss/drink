@@ -557,3 +557,34 @@ footer {
   margin: 4px 0;
   font-size: 0.95em;
 }
+
+#legend {
+  background: white;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+#legend h3 {
+  margin-top: 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+#legend div {
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#legend img {
+  width: 20px;
+  height: 20px;
+}

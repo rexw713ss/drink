@@ -1,3 +1,7 @@
+/* ====== menu.js ====== */
+
+// 請確保在此之前已載入 js/menu_data.js，並且該檔案定義了 const menuImages = { ... }
+
 /* ====== 語言判斷 ====== */
 const isChinese = document.documentElement.lang === "zh-Hant";
 
@@ -19,27 +23,31 @@ function switchLanguage() {
     "menu.html": "menu_en.html",
     "menu_en.html": "menu.html",
   };
-  const target = langMap[file] || "index_en.html";
+  const target = langMap[file] || (isChinese ? "index_en.html" : "index.html");
   window.location.href = target;
 }
 
-/* ====== 取得品牌 ID 與菜單圖片路徑 ====== */
+/* ====== 取得查詢參數 ====== */
 function getQueryParam(name) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(name);
 }
 
+/* ====== 主流程 ====== */
 const brandId = getQueryParam("brand");
-const imagePath = menuImages[brandId];
+const data = menuImages[brandId];
+const imagePath = data ? (isChinese ? data.zh : data.en) : null;
+
 const brandTitle = document.getElementById("brand-title");
 const container = document.getElementById("menu-container");
 
-/* ====== 顯示菜單或錯誤訊息 ====== */
 if (imagePath) {
+  // 設定標題
   brandTitle.textContent = isChinese
     ? `🍹 ${brandId} 菜單`
     : `🍹 ${brandId} Menu`;
 
+  // 顯示圖片
   const img = document.createElement("img");
   img.src = imagePath;
   img.alt = isChinese ? `${brandId} 菜單` : `${brandId} Menu`;
@@ -47,6 +55,7 @@ if (imagePath) {
   img.addEventListener("click", () => openImageInNewTab(imagePath));
   container.appendChild(img);
 } else {
+  // 顯示錯誤訊息
   container.innerHTML = isChinese
     ? `<p>😥 找不到這間店的菜單</p>`
     : `<p>😥 Menu not found for this brand.</p>`;
@@ -57,7 +66,7 @@ function openImageInNewTab(url) {
   window.open(url, "_blank");
 }
 
-/* ====== 返回按鈕設定 ====== */
+/* ====== 返回按鈕 ====== */
 const backBtn = document.getElementById("back-btn");
 if (backBtn) {
   backBtn.textContent = isChinese ? "⬅️ 回到品牌列表" : "⬅️ Back to brand list";
@@ -66,30 +75,27 @@ if (backBtn) {
   });
 }
 
-/* ====== 下載按鈕設定 ====== */
+/* ====== 下載按鈕 ====== */
 const downloadBtn = document.getElementById("download");
 if (downloadBtn && imagePath) {
   downloadBtn.textContent = isChinese ? "⬇️ 下載菜單" : "⬇️ Download Menu";
   downloadBtn.addEventListener("click", () => {
     const link = document.createElement("a");
     link.href = imagePath;
-    link.download = `${brandId}_menu.jpg`;
+    link.download = isChinese ? `${brandId}_菜單.jpg` : `${brandId}_menu.jpg`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   });
 }
 
-/* ====== 分享按鈕設定（Web Share API） ====== */
+/* ====== 分享按鈕（Web Share API + Clipboard） ====== */
 const shareBtn = document.getElementById("share-btn");
 const shareStatus = document.getElementById("share-status");
-
 if (shareBtn) {
   shareBtn.textContent = isChinese ? "🔗 分享這個菜單" : "🔗 Share this menu";
-
   shareBtn.addEventListener("click", async () => {
     const url = window.location.href;
-
     if (navigator.share) {
       try {
         await navigator.share({
@@ -97,7 +103,7 @@ if (shareBtn) {
           text: isChinese
             ? "這是我找到的飲料店菜單："
             : "Check out this drink shop menu:",
-          url: url,
+          url,
         });
         shareStatus.textContent = isChinese
           ? "✅ 已成功分享！"
@@ -117,14 +123,13 @@ if (shareBtn) {
         shareStatus.textContent = isChinese ? "❌ 複製失敗" : "❌ Copy failed";
       }
     }
-
     setTimeout(() => {
       shareStatus.textContent = "";
     }, 3000);
   });
 }
 
-/* ====== 社群分享設定 ====== */
+/* ====== 社群分享連結 ====== */
 const currentURL = encodeURIComponent(window.location.href);
 
 const fbShare = document.getElementById("facebook-share");
@@ -137,7 +142,7 @@ if (lineShare) {
   lineShare.href = `https://social-plugins.line.me/lineit/share?url=${currentURL}`;
 }
 
-const igTip = document.getElementById("instagram-share");
+const igTip = document.getElementById("instagram-tip");
 if (igTip) {
   igTip.addEventListener("click", () => {
     alert(
